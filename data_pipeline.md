@@ -14,7 +14,9 @@ Lastly, we want to ensure that the sequences that we use contain homologous regi
 ---
 ## 2) Multiple Sequence Alignment
 
+Next, we must ensure that our homologous sequences are aligned properly at their respective sites so that we can properly count sequence changes for each site, which is crucial for the inference of our phylogenetic tree in the next step. 
 
+`
 
 ---
 ## 3) Inference of Phylogenetic Tree
