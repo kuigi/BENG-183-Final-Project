@@ -5,6 +5,8 @@ The types of molecular clock models differ simply in how they handle evolutionar
 
 ## Strict Clocks
 
+Strict clocks are the most basic form of molecular clocks, assu
+
 ## Relaxed Clocks
 
 ## Local Clocks 
