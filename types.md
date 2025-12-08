@@ -4,11 +4,23 @@ In our implementation of the molecular clock model onto the phylogenic tree that
 
 ## Strict Clocks
 
-A strict molecular clock, also called a global clock, assumes that the phylogenetic tree maintains the same rate of substutions per unit time throughout all branches. 
+A strict molecular clock, also called a global clock, assumes that the phylogenetic tree maintains the same rate of substutions per unit time throughout all branches. These clocks are computationally simpler, only needing 1 or a few parameters, and best used when data is limited or we know the rate is close to constant. With this clock, once a single global rate has been estimated, you can convert substitutions per site directly into absolute times once you provide a calibration point (ex. fossil age or known divergence time). 
+
+However, the usage of strict clocks with many datasets often results in an overdispersion of rates as we see variance in rates that ends up being larger than what we expect with a strict clock, ending up in biased time estimates in the final phylogeny.  Thus, strict clocks are more oftne used as a baseline model which is compared to more flexible models (which we will see now) using comparison tools like likelihood ratio tests, Bayes factors, or other model comparison metrics. 
+ [Robinson 2006](https://pmc.ncbi.nlm.nih.gov/articles/PMC1395352/)
 
 ![StrictClock](<img width="1328" height="870" alt="image" src="https://github.com/user-attachments/assets/fb0627de-b1ce-44fa-9fe8-d0e6daaef5ff" />) 
 
 
 ## Relaxed Clocks
 
-## Local Clocks 
+As opposed to strict clocks, relaxed clocks were created with the goal to deal explicitly with rate heterogeneity among lineages. This is especially useful now with our current undertanding of biological variation showing a wide array of sources for variation that fall into the categories of gene effects, lineage effects, and a mix known as gene by lineage effects. The classic relaxed-clock model, as created by Alexei Drummond and their team in 2006, allows for each branch to have its own rate and evolving the single global constant model into a diverse colection of random variables on each branch. 
+[Drummond et al. 2006](https://journals.plos.org/plosbiology/article?id=10.1371%2Fjournal.pbio.0040088)
+
+The more simpler and prevalent version of relaxed clocks are called uncorrelated relaxed clocks. In these relaxed clocks, we independently draw each branch rate from a shared probability distribution (lognormal, gamma, exponential are the models supported in BEAST). In BEAST, each branch is assigned a unique evolutionary rate from a fixed number of discrete rate which are created from a categorization of the distribution's rates. [BEASTdoc 2017](https://beast.community/clocks.html)
+
+## (Fixed) Local Clocks 
+
+Local clocks serve as a good middle ground between strict and relaxed clocks. These clocks assume that different groups of branches share different but internally constant rates, and they allow the model to avoid over or underfitting of rate variation to the phylogeny. This is useful in cases when specific groups or clades of the tree are suspected to evolve faster or slower than the rest of the tree. In these cases, having a fully relaxed clock may overparameterize the model, but a fully strict clock will not properly account for the variation in these clades. [BEASTdoc 2017](https://beast.community/clocks.html) 
+
+
