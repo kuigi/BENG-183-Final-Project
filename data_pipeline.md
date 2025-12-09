@@ -42,7 +42,9 @@ The output of this inference is a phylogenetic tree which has branch lengths cor
 
 Once the substitution tree is created, a clock model is place onto the tree to convert substitutions per site into time units. However, to do this, we must perform calibration using a time constraint in order to position the times/years we obtain into actual real time, or else all we have are relative ages. 
 
-![image]()
+![image](m_rsbl20150194f01.jpeg)
+
+[Ho et. al 2015](https://royalsocietypublishing.org/rsbl/article/11/9/20150194/34621/Biogeographic-calibrations-for-the-molecular) 
 
 
 
