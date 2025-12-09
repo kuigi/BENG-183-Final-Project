@@ -9,6 +9,9 @@ Of course, to get started we first have to obtain the homologous DNA/RNA/amino a
 
 We also want to make sure that we have the relevant **metadata** that we will use later in our phylogenetic tree. This is composed mainly of elements that provide our sequences with more context, providing our sequences with information about the species it was obtained from, sampling location, and (arguably most importantly) sampling *date*. By utilizing the sampling date, BEAST can convert sequence changes to dates, and dates to years on our phylogenetic tree. 
 
+![image](tipdates1.png)
+Here in BEAST, import of tip dates (sampling dates for each sample) is crucial for the creation of the phylogeny in the next steps. 
+
 Lastly, we want to ensure that the sequences that we use contain homologous regions across all samples. This way, in the next step (Multiple Sequence Alignment), the alignment of sequences will be successful and meaningful, and the creation of the phylogenetic tree later on will be accurate. 
 
 
@@ -19,7 +22,7 @@ A crucial step in many data pipelines in bioinformatics tools, multiple sequence
 Of course, there are a lot of common MSA tools that have been developed, and some have been specifically useful in alignment for the purpose of the creation of a phylogeny. These include tools like MAFFT, a widely used, fast, and accurate tool for nucleotide and protein sequences, and MUSCLE/MUSCLE5, a tool with high-accuracy alignments and tools to diagnose alignment uncertainty.
 
 
-[Geneious Academy](https://www.geneious.com/guides/understanding-sequence-alignment?utm_source=chatgpt.com)
+[Geneious Academy](https://www.geneious.com/guides/understanding-sequence-alignment)
 
 ## 3) Inference of Phylogenetic Tree
 
