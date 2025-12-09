@@ -11,14 +11,13 @@ We also want to make sure that we have the relevant **metadata** that we will us
 
 Lastly, we want to ensure that the sequences that we use contain homologous regions across all samples. This way, in the next step (Multiple Sequence Alignment), the alignment of sequences will be successful and meaningful, and the creation of the phylogenetic tree later on will be accurate. 
 
----
+
 ## 2) Multiple Sequence Alignment
 
 A crucial step in many data pipelines in bioinformatics tools, multiple sequence alignment (MSA) arranges sequences so that columns correspond to homologous sites and gaps represent insertions or deletions. In the molecular clock analysis pipeline, MSA is crucial as the phylogeny is derived from looking at substitution counts when looking at column-wise comparisons. Bad alignment can construe false substitutions or hide real substitutions, resulting in a biased creation of the phylogeny and clock fitting. 
 
 Of course, there are a lot of common MSA tools that have been developed, and some have been specifically useful in alignment for the purpose of the creation of a phylogeny. These include tools like MAFFT, a widely used, fast, and accurate tool for nucleotide and protein sequences, and MUSCLE/MUSCLE5, a tool with high-accuracy alignments and tools to diagnose alignment uncertainty.
 
----
 ## 3) Inference of Phylogenetic Tree
 
 After MSA, we can now infer a phylogenetic tree under a substitution model which we will use to describe how nucleotides or amino acids change over time. Major computational frameworks for this step include: 
@@ -27,12 +26,28 @@ Bayesian inference: samples trees and parameters from the posterior distribution
 
 The output of this inference is a phylogenetic tree which has branch lengths corresponding to subsitutions per site, and in the next step we will place the clock model on this tree to convert substituions per site into units of time. 
 
----
 ## 4) Selection and Placement of Molecular Clock Model
 
 Once the substitution tree is created, a clock model is place onto the tree to convert substitutions per site into time units. However, to do this, we must perform calibration using a time constraint in order to position the times/years we obtain into actual real time, or else all we have are relative ages. 
 
-Common calibration strategies include fossil calibrations, which construct node ages from fossil ages using min/max bounds or probablistic 
+Common calibration strategies include: fossil calibrations, which construct node ages from fossil ages using min/max bounds or probablistic priors (lognormal, uniform, etc.); biogeographic/historical calibrations, which construct timing constraints from known geographic/historical events (continental drift, island colonizations); tip dating and heterochronous sampling, which uses sampling dates of sequences that act as calibrations directly on the tips, allowing simultaneous estimation of rates and times. 
 
----
+Once calibrated, we use frameworks like BEAST to place our choice of clock onto the phylogeny to produce date estimates as well as check model fit using analysis from our statistical inferences (Bayesian inferences, posterior/prior predictive checks) of choice in order to verify the model fit is ideal. 
+
+
 ## 5) Final Output: Time-Scaled, Ultrametic Phylogenic Tree
+
+Our final product is usually an ultrametric, time-scaled phylogenetic tree. All tips align either at present time or at their respective uniform sampling time. The x-axis should be in units of absolute time (years or some magnitude of years).
+
+From these trees, we can read off many important pieces of data and information (some examples we will cover in depth in the next section). Common use cases include: 
+
+*Time to most recent common ancestor (tMRCA)*: Analyzing where particular clades or branches originate, such as detecting the origin of the lineage of a virus, or finding out where humans divereged from chimpanzees. 
+*Speed and method of diversification*: Similar to tMRCA, determined by comparing branching patterns and branch ages across clades 
+*Comparison of divergence times to historical reccords*: Utilizing the model's estimated divergence times to previous understandings and records of events (fossil records, geological events, historical data) 
+
+
+
+
+
+
+
