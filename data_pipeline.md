@@ -38,15 +38,19 @@ Bayesian inference: samples trees and parameters from the posterior distribution
 The output of this inference is a phylogenetic tree which has branch lengths corresponding to subsitutions per site, and in the next step we will place the clock model on this tree to convert substituions per site into units of time. 
 
 
-
-
 ## 4) Selection and Placement of Molecular Clock Model
 
 Once the substitution tree is created, a clock model is place onto the tree to convert substitutions per site into time units. However, to do this, we must perform calibration using a time constraint in order to position the times/years we obtain into actual real time, or else all we have are relative ages. 
 
+![image]()
+
+
+
+
 Common calibration strategies include: fossil calibrations, which construct node ages from fossil ages using min/max bounds or probablistic priors (lognormal, uniform, etc.); biogeographic/historical calibrations, which construct timing constraints from known geographic/historical events (continental drift, island colonizations); tip dating and heterochronous sampling, which uses sampling dates of sequences that act as calibrations directly on the tips, allowing simultaneous estimation of rates and times. 
 
-<img src="[https://beast.community/images/news/EBOV_Reference_Set_15_LC1.MCC.tree.pn](https://onlinelibrary.wiley.com/cms/asset/f00884b4-52ce-4337-b9e6-a37d3db8d5bc/mec12953-fig-0002-m.jpg" width="600" height="600" >
+
+
 
 Once calibrated, we use frameworks like BEAST to place our choice of clock onto the phylogeny to produce date estimates as well as check model fit using analysis from our statistical inferences (Bayesian inferences, posterior/prior predictive checks) of choice in order to verify the model fit is ideal. 
 
