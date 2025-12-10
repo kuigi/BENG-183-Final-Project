@@ -248,7 +248,7 @@ Once calibrated, we use frameworks like BEAST to place our choice of clock onto 
 
 Our final product is usually an ultrametric, time-scaled phylogenetic tree. All tips align either at present time or at their respective uniform sampling time. The x-axis should be in units of absolute time (years or some magnitude of years).
 
-![image](https://github.com/kuigi/beng183finalproject/blob/main/rescaleTree-1.svg) 
+![image](https://github.com/kuigi/beng183finalproject/blob/main/rescaleTree-1.png) 
 
 *This visual provides a simple yet compelling visual of how we go from substitutions per site to the final strcuture of the phylogenic tree using our clock model and calibrations.* 
 
