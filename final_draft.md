@@ -165,7 +165,7 @@ The more simpler and prevalent version of relaxed clocks are called uncorrelated
 Local clocks serve as a good middle ground between strict and relaxed clocks. These clocks assume that different groups of branches share different but internally constant rates, and they allow the model to avoid over or underfitting of rate variation to the phylogeny. This is useful in cases when specific groups or clades of the tree are suspected to evolve faster or slower than the rest of the tree. In these cases, having a fully relaxed clock may overparameterize the model, but a fully strict clock will not properly account for the variation in these clades. [BEASTdoc 2017](https://beast.community/clocks.html) 
 
 
-<img src="https://beast.community/images/news/EBOV_Reference_Set_15_LC1.MCC.tree.png" width="1000" height="1000" >
+<img src="https://beast.community/images/news/EBOV_Reference_Set_15_LC1.MCC.tree.png" width="600" height="600" >
 
 Here, we can see that the different colored branch groups indicate different rates of mutation (in the context of this study, blue indicated a lower mutation rate). [BEAST Community, 2019](https://beast.community/ebov_local_clocks.html) 
 
@@ -248,7 +248,7 @@ Once calibrated, we use frameworks like BEAST to place our choice of clock onto 
 
 Our final product is usually an ultrametric, time-scaled phylogenetic tree. All tips align either at present time or at their respective uniform sampling time. The x-axis should be in units of absolute time (years or some magnitude of years).
 
-![image](https://github.com/kuigi/beng183finalproject/blob/main/rescaleTree-1.png) 
+![image](https://github.com/kuigi/beng-183-final-project/blob/main/rescaleTree-1.png) 
 
 *This visual provides a simple yet compelling visual of how we go from substitutions per site to the final strcuture of the phylogenic tree using our clock model and calibrations.* 
 
