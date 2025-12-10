@@ -8,6 +8,8 @@ By the end of the chapter, you should understand both the theory and the practic
 
 Created by: Luigi Bartulo, Mitra Sutar, Zihan (Isabella) Xie 
 
+The markdown file (and a better view of the paper!) is viewable at https://github.com/kuigi/BENG-183-Final-Project/blob/main/final_draft.md . There is an image in 4.3 that appears skewed in the PDF, and an image in 5.5 that simply does not show up in the PDF, so please consider using this view when looking at the paper! 
+
 ---
 
 ## Contents
