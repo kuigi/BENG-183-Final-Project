@@ -14,6 +14,8 @@ We also want to make sure that we have the relevant **metadata** that we will us
 
 *Here in BEAST, import of tip dates (sampling dates for each sample) is crucial for the creation of the phylogeny in the next steps.* 
 
+[Berkeley 2024](https://guides.lib.berkeley.edu/ncbi/sequences) 
+
 Lastly, we want to ensure that the sequences that we use contain homologous regions across all samples. This way, in the next step (Multiple Sequence Alignment), the alignment of sequences will be successful and meaningful, and the creation of the phylogenetic tree later on will be accurate. 
 
 
@@ -30,7 +32,9 @@ Of course, there are a lot of common MSA tools that have been developed, and som
 
 ## 3) Inference of Phylogenetic Tree
 
-<img src="https://biohub.org/rapid-response/wp-content/uploads/sites/5/2024/10/MSA-Tree_Schematic.png" width="600" height="400"> [Biohub](https://biohub.org/rapid-response/genomic-epidemiology/sequence-alignments-molecular-clocks/)
+<img src="https://biohub.org/rapid-response/wp-content/uploads/sites/5/2024/10/MSA-Tree_Schematic.png" width="600" height="400"> 
+
+[Biohub](https://biohub.org/rapid-response/genomic-epidemiology/sequence-alignments-molecular-clocks/)
 
 
 After MSA, we can now infer a phylogenetic tree under a substitution model which we will use to describe how nucleotides or amino acids change over time. Major computational frameworks for this step include: 
@@ -70,6 +74,12 @@ Once calibrated, we use frameworks like BEAST to place our choice of clock onto 
 ## 5) Final Output: Time-Scaled, Ultrametic Phylogenic Tree
 
 Our final product is usually an ultrametric, time-scaled phylogenetic tree. All tips align either at present time or at their respective uniform sampling time. The x-axis should be in units of absolute time (years or some magnitude of years).
+
+![image](https://github.com/kuigi/beng183finalproject/blob/main/rescaleTree-1.svg) 
+
+*This visual provides a simple yet compelling visual of how we go from substitutions per site to the final strcuture of the phylogenic tree using our clock model and calibrations.* 
+
+[Yu 2022](https://yulab-smu.top/treedata-book/chapter4.html) 
 
 From these trees, we can read off many important pieces of data and information (some examples we will cover in depth in the next section). Common use cases include: 
 
