@@ -1,9 +1,9 @@
-# Data and Analysis Pipeline for Molecular Clocks
+# 4) Data and Analysis Pipeline for Molecular Clocks
 
 A molecular clock analysis generally follows the same pipeline that starts with raw sequence data and finalizes with a time-scaled phylogenetic tree. 
 
 
-## 1) Obtaining Sequences and Molecular Data
+## 4.1) Obtaining Sequences and Molecular Data
 
 Of course, to get started we first have to obtain the homologous DNA/RNA/amino acid sequences sampled from different species, populations, or time points that we will be analyzing for sequence change and create a phylogenetic tree. Molecular clock analysis can use whole genomes, single genes, and concatenated loci, so whatever part of the genome we need to utilize we can use. We can obtain through our public DNA/RNA databases such as GenBank, ENA, and GISAID. We can also use the sequences we obtain from sequencing in our own labs, provided we ensure that they pass our respective quality control filtering. 
 
@@ -19,7 +19,7 @@ We also want to make sure that we have the relevant **metadata** that we will us
 Lastly, we want to ensure that the sequences that we use contain homologous regions across all samples. This way, in the next step (Multiple Sequence Alignment), the alignment of sequences will be successful and meaningful, and the creation of the phylogenetic tree later on will be accurate. 
 
 
-## 2) Multiple Sequence Alignment
+4.2) Multiple Sequence Alignment
 
 A crucial step in many data pipelines in bioinformatics tools, multiple sequence alignment (MSA) arranges sequences so that columns correspond to homologous sites and gaps represent insertions or deletions. In the molecular clock analysis pipeline, MSA is crucial as the phylogeny is derived from looking at substitution counts when looking at column-wise comparisons. Bad alignment can construe false substitutions or hide real substitutions, resulting in a biased creation of the phylogeny and clock fitting. 
 
@@ -30,7 +30,7 @@ Of course, there are a lot of common MSA tools that have been developed, and som
 
 [Geneious Academy](https://www.geneious.com/guides/understanding-sequence-alignment)
 
-## 3) Inference of Phylogenetic Tree
+4.3) Inference of Phylogenetic Tree
 
 <img src="https://biohub.org/rapid-response/wp-content/uploads/sites/5/2024/10/MSA-Tree_Schematic.png" width="600" height="400"> 
 
@@ -50,7 +50,7 @@ Bayesian inference: samples trees and parameters from the posterior distribution
 The output of this inference is a phylogenetic tree which has branch lengths corresponding to subsitutions per site, and in the next step we will place the clock model on this tree to convert substituions per site into units of time. 
 
 
-## 4) Selection and Placement of Molecular Clock Model
+4.4) Selection and Placement of Molecular Clock Model
 
 Once the substitution tree is created, a clock model is place onto the tree to convert substitutions per site into time units. However, to do this, we must perform calibration using a time constraint in order to position the times/years we obtain into actual real time, or else all we have are relative ages. 
 
@@ -71,7 +71,7 @@ Once calibrated, we use frameworks like BEAST to place our choice of clock onto 
 [Drummond et. al 2006](https://journals.plos.org/plosbiology/article?id=10.1371%2Fjournal.pbio.0040088) 
 
 
-## 5) Final Output: Time-Scaled, Ultrametic Phylogenic Tree
+4.5) Final Output: Time-Scaled, Ultrametic Phylogenic Tree
 
 Our final product is usually an ultrametric, time-scaled phylogenetic tree. All tips align either at present time or at their respective uniform sampling time. The x-axis should be in units of absolute time (years or some magnitude of years).
 
