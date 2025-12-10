@@ -14,7 +14,7 @@ However, the usage of strict clocks with many datasets often results in an overd
 
 ## Relaxed Clocks
 
-As opposed to strict clocks, relaxed clocks were created with the goal to deal explicitly with rate heterogeneity among lineages. This is especially useful now with our current undertanding of biological variation showing a wide array of sources for variation that fall into the categories of gene effects, lineage effects, and a mix known as gene by lineage effects. The classic relaxed-clock model, as created by Alexei Drummond and their team in 2006, allows for each branch to have its own rate and evolving the single global constant model into a diverse colection of random variables on each branch. 
+As opposed to strict clocks, relaxed clocks were created with the goal to deal explicitly with rate heterogeneity among lineages. This is especially useful now with our current undertanding of biological variation showing a wide array of sources for variation that fall into the categories of gene effects, lineage effects, and a mix known as gene by lineage effects. The classic relaxed-clock model (one of two often used models but most relevant for this paper), was created by Alexei Drummond and their team in 2006 and allows for each branch to have its own rate and evolving the single global constant model into a diverse colection of random variables on each branch. 
 [Drummond et al. 2006](https://journals.plos.org/plosbiology/article?id=10.1371%2Fjournal.pbio.0040088)
 
 <img src="https://beast.community/images/clocks/uncorrelatedClock.png" width="600" height="400">
